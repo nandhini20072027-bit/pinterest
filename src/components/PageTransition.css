@@ -1,0 +1,7 @@
+.page-transition { position: relative; min-height: calc(100vh - 68px); }
+.page-transition__veil { position: fixed; inset: 0; z-index: 1900; pointer-events: none; opacity: 0; background: rgba(2, 3, 10, .72); transform: scale(1.04); transition: opacity .18s ease, transform .5s ease; }
+.page-transition__veil i { position: absolute; left: -10%; width: 120%; height: 2px; background: linear-gradient(90deg, transparent, #00f5ff 30%, #ff00a8 70%, transparent); box-shadow: 0 0 18px #00f5ff; transform: rotate(-7deg) translateX(-100%); }
+.page-transition__veil i:first-child { top: 42%; }.page-transition__veil i:nth-child(2) { top: 58%; background: linear-gradient(90deg, transparent, #ff00a8 30%, #8b5cf6 70%, transparent); box-shadow: 0 0 18px #ff00a8; }
+.page-transition__veil b { position: absolute; inset: 50% 0 auto; text-align: center; color: #bafcff; font: 10px 'Orbitron', sans-serif; letter-spacing: .28em; opacity: 0; }
+.page-transition--active .page-transition__veil { opacity: 1; transform: scale(1); }.page-transition--active .page-transition__veil i { animation: pageSweep .65s ease-out both; }.page-transition--active .page-transition__veil i:nth-child(2) { animation-delay: .08s; }.page-transition--active .page-transition__veil b { animation: pageSignal .55s .12s ease-out both; }
+@keyframes pageSweep { from { transform: rotate(-7deg) translateX(-100%); } to { transform: rotate(-7deg) translateX(100%); } } @keyframes pageSignal { from { opacity: 0; letter-spacing: .5em; } to { opacity: 1; letter-spacing: .28em; } }
